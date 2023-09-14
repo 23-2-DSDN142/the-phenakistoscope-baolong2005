@@ -1,7 +1,7 @@
 const SLICE_COUNT = 10;
 
 function setup_pScope(pScope){
-  pScope.output_mode(ANIMATED_DISK);
+  pScope.output_mode(OUTPUT_GIF(1000));
   //pScope.output_mode(STATIC_DISK);
   pScope.scale_for_screen(true);
   pScope.draw_layer_boundaries(false);
@@ -39,6 +39,7 @@ function circles(x, y, animation, pScope){
 }   
 function center(x, y, animation, pScope){
   blendMode(DIFFERENCE);
+  rotate(animation.wave(3)*5)
   translate(5+animation.wave(1),5 + animation.wave(1));
   fill(255, 230, 0); //yellow
   rect(0,0,100,100);
